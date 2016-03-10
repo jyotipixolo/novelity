@@ -1,0 +1,15 @@
+.iconwhite {
+    color: white !important;
+}
+
+.iconblack {
+    color: black !important;
+}
+
+.tabs .tab-item-active {
+    color: white !important;
+}
+
+.tabs .tab-item {
+    color: black !important;
+}

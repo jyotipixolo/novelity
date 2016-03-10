@@ -75,9 +75,39 @@ angular.module('starter.controllers', [])
 .controller('feedbacktCtrl', function ($scope, $stateParams) {})
     .controller('postCtrl', function ($scope, $stateParams) {})
 
-.controller('browseCtrl', function ($scope, $stateParams) {
+.controller('browseCtrl', function ($scope, $stateParams, $location) {
 
         console.log("browse page");
+
+        $scope.show = true;
+
+        $scope.tab = true;
+  
+        $scope.click = function () {
+            console.log("Column is clicked");
+            $scope.show = !$scope.show;
+
+            $location.path("/app/playlist");
+        };
+
+        $scope.tabchange = function (val) {
+            if (val == "news") {
+                $scope.tab = true;
+            } else {
+                $scope.tab = false;
+            };
+            console.log("tab is changing");
+            
+            
+        };
+    
+    
+
+
+
+
+
+
     })
     .controller('bencyCtrl', function ($scope, $stateParams) {
 

@@ -2,12 +2,13 @@
 
     <ion-tabs class="tabs-balanced tabs-icon-top">
 
-        <ion-tab title="News" icon-on="ion-ios-paper" icon-off="ion-ios-paper" href="#/app/playlists" on-select="onTabSelected()" on-deselect="onTabDeselected()">
+        <ion-tab title="News" icon-on="ion-ios-paper" icon-off="ion-ios-paper" on-select="onTabSelected()" on-deselect="onTabDeselected()" ng-click="tabchange('news')" >
 
         </ion-tab>
 
-        <ion-tab title="Video" icon-on="ion-social-youtube" icon-off="ion-social-youtube" href="#/app/search" on-select="onTabSelected()" on-deselect="onTabDeselected()">
-
+        <ion-tab title="Video" icon-on="ion-social-youtube" icon-off="ion-social-youtube" on-select="onTabSelected()" on-deselect="onTabDeselected()"
+         ng-click="tabchange('videos')" >
+<!--ng-class="{iconwhite:!tab,iconblack:tab}"-->
         </ion-tab>
 
 
@@ -15,108 +16,157 @@
 
 
     <ion-content style="    margin-top: 50px;">
-        <div class="row categoryrow">
-            <div class="col col-50">
-                <div class="item item-image categoryimagediv">
-                    <img src="img/Smart-City.jpeg" class="">
-                </div>
-                <div></div>
-                <a class="item item-icon-center assertive categoryheadline" href="#">
-World
-  </a>
-            </div>
-            <div class="col col-50">
 
-                <div class="item item-image categoryimagediv">
-                    <img src="img/education-system-India.Indian-Link.jpg" class="">
+        <!--NEWS CATEGORIES-->
+        <div ng-show="tab">
+
+            <div class="row categoryrow">
+                <div class="col col-50" ng-click="click()">
+                    <div class="item item-image categoryimagediv">
+                        <img src="img/Smart-City.jpeg" class="">
+                    </div>
+                    <div></div>
+                    <p class="item item-icon-center assertive categoryheadline" href="#">
+                        World
+                    </p>
                 </div>
-                <a class="item item-icon-center assertive categoryheadline" href="#">
+                <div class="col col-50" ng-show="show">
+
+                    <div class="item item-image categoryimagediv">
+                        <img src="img/education-system-India.Indian-Link.jpg" class="">
+                    </div>
+                    <a class="item item-icon-center assertive categoryheadline" href="#">
 Education
   </a>
-            </div>
-        </div>
-        <div class="row categoryrow">
-            <div class="col col-50">
-                <div class="item item-image categoryimagediv">
-                    <img src="img/healthcare-technology-8-04-2015.jpg" class="">
                 </div>
-                <a class="item item-icon-center assertive categoryheadline" href="#">
+            </div>
+            <div class="row categoryrow">
+                <div class="col col-50">
+                    <div class="item item-image categoryimagediv">
+                        <img src="img/healthcare-technology-8-04-2015.jpg" class="">
+                    </div>
+                    <a class="item item-icon-center assertive categoryheadline" href="#">
                 
 Technology
   </a>
-            </div>
-            <div class="col col-50">
-
-                <div class="item item-image categoryimagediv">
-                    <img src="img/Sport-Tournament-picture.jpg" class="">
                 </div>
-                <a class="item item-icon-center assertive categoryheadline" href="#">
+                <div class="col col-50">
+
+                    <div class="item item-image categoryimagediv">
+                        <img src="img/Sport-Tournament-picture.jpg" class="">
+                    </div>
+                    <a class="item item-icon-center assertive categoryheadline" href="#">
 Sports
   </a>
-            </div>
-        </div>
-
-        <div class="row categoryrow">
-            <div class="col col-50">
-                <div class="item item-image categoryimagediv">
-                    <img src="img/entertainment.jpg" class="">
                 </div>
-                <div></div>
-                <a class="item item-icon-center assertive categoryheadline" href="#">
+            </div>
+
+            <div class="row categoryrow">
+                <div class="col col-50">
+                    <div class="item item-image categoryimagediv">
+                        <img src="img/entertainment.jpg" class="">
+                    </div>
+                    <div></div>
+                    <a class="item item-icon-center assertive categoryheadline" href="#">
 Entertainment
   </a>
-            </div>
-            <div class="col col-50">
-
-                <div class="item item-image categoryimagediv">
-                    <img src="img/business.jpg" class="">
                 </div>
-                <a class="item item-icon-center assertive categoryheadline" href="#">
+                <div class="col col-50">
+
+                    <div class="item item-image categoryimagediv">
+                        <img src="img/business.jpg" class="">
+                    </div>
+                    <a class="item item-icon-center assertive categoryheadline" href="#">
 Buisness
   </a>
-            </div>
-        </div>
-
-
-        <div class="row categoryrow">
-            <div class="col col-50">
-                <div class="item item-image categoryimagediv">
-                    <img src="img/travel.jpg" class="">
                 </div>
-                <div></div>
-                <a class="item item-icon-center assertive categoryheadline" href="#">
+            </div>
+
+
+            <div class="row categoryrow">
+                <div class="col col-50">
+                    <div class="item item-image categoryimagediv">
+                        <img src="img/travel.jpg" class="">
+                    </div>
+                    <div></div>
+                    <a class="item item-icon-center assertive categoryheadline" href="#">
 Travel
   </a>
-            </div>
-            <div class="col col-50">
-
-                <div class="item item-image categoryimagediv">
-                    <img src="img/election.jpg" class="">
                 </div>
-                <a class="item item-icon-center assertive categoryheadline" href="#">
+                <div class="col col-50">
+
+                    <div class="item item-image categoryimagediv">
+                        <img src="img/election.jpg" class="">
+                    </div>
+                    <a class="item item-icon-center assertive categoryheadline" href="#">
 US Election
              </a>
-            </div>
-        </div>
-
-
-
-
-        <div class="row">
-            <div class="col">
-               
-                             <div class="col">
-                <div class="item item-image categoryimagediv">
-                    <img src="img/life & style.jpg" class="">
                 </div>
-                <div></div>
-                <a class="item item-icon-center assertive categoryheadline" href="#">
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col">
+
+                    <div class="col">
+                        <div class="item item-image categoryimagediv">
+                            <img src="img/life & style.jpg" class="">
+                        </div>
+                        <div></div>
+                        <a class="item item-icon-center assertive categoryheadline" href="#">
 Life & Styles
   </a>
+                    </div>
+
+                </div>
             </div>
 
-            </div>
         </div>
+
+
+
+        <!--VIDEOS-->
+        <div ng-hide="tab">
+
+            <ion-list>
+                <ion-item href="#">
+                    <div class="video-container">
+                        <object width="560" height="315">
+                            <param name="movie" value="//www.youtube.com/v/WzhW20hLp6M?hl=uk_UA&amp;version=3&amp;rel=0" />
+                            <param name="allowFullScreen" value="true" />
+                            <param name="allowscriptaccess" value="always" />
+                            <embed src="//www.youtube.com/v/WzhW20hLp6M?hl=uk_UA&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="300" height="200" allowscriptaccess="always" allowfullscreen="true" />
+                        </object>
+                    </div>
+                </ion-item>
+
+                <ion-item href="#">
+                    <div class="video-container">
+                        <object width="560" height="315">
+                            <param name="movie" value="//www.youtube.com/v/WzhW20hLp6M?hl=uk_UA&amp;version=3&amp;rel=0" />
+                            <param name="allowFullScreen" value="true" />
+                            <param name="allowscriptaccess" value="always" />
+                            <embed src="//www.youtube.com/v/WzhW20hLp6M?hl=uk_UA&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="300" height="200" allowscriptaccess="always" allowfullscreen="true" />
+                        </object>
+                    </div>
+                </ion-item>
+                <ion-item href="#">
+                    <div class="video-container">
+                        <object width="560" height="315">
+                            <param name="movie" value="//www.youtube.com/v/WzhW20hLp6M?hl=uk_UA&amp;version=3&amp;rel=0" />
+                            <param name="allowFullScreen" value="true" />
+                            <param name="allowscriptaccess" value="always" />
+                            <embed src="//www.youtube.com/v/WzhW20hLp6M?hl=uk_UA&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="300" height="200" allowscriptaccess="always" allowfullscreen="true" />
+                        </object>
+                    </div>
+                </ion-item>
+            </ion-list>
+
+        </div>
+
+
     </ion-content>
 
 
